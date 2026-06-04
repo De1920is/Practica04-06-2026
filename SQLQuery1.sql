@@ -130,3 +130,9 @@ GO
 ALTER TABLE Medicos
 ADD CONSTRAINT UQ_Medicos_Email UNIQUE (Email);
 GO
+
+-- 17. Agregar CHECK para edad mayor o igual a 0.
+-- Nota: Primero agregamos el campo Edad a la tabla Pacientes.
+ALTER TABLE Pacientes
+ADD Edad INT;
+GO
