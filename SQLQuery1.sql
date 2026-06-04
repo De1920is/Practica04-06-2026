@@ -656,3 +656,53 @@ GO
 DELETE FROM Pacientes
 WHERE Nombres LIKE '%Prueba%' OR Apellidos LIKE '%Prueba%';
 GO
+
+-- ============================================================================
+-- MÓDULO VIII - CONSULTAS SELECT
+-- ============================================================================
+
+-- 91. Mostrar todos los pacientes.
+SELECT * FROM Pacientes;
+GO
+
+-- 92. Mostrar todos los médicos.
+SELECT * FROM Medicos;
+GO
+
+-- 93. Mostrar todas las especialidades.
+SELECT * FROM Especialidades;
+GO
+
+-- 94. Mostrar todas las citas.
+SELECT * FROM Citas;
+GO
+
+-- 95. Mostrar pacientes ordenados por apellido.
+SELECT * FROM Pacientes
+ORDER BY Apellidos ASC;
+GO
+
+-- 96. Mostrar médicos ordenados por salario.
+SELECT * FROM Medicos
+ORDER BY Salario DESC;
+GO
+
+-- 97. Mostrar citas del día actual.
+SELECT * FROM Citas
+WHERE CAST(FechaCita AS DATE) = CAST(GETDATE() AS DATE);
+GO
+
+-- 98. Mostrar habitaciones disponibles.
+SELECT * FROM Habitaciones
+WHERE Estado = 'Disponible';
+GO
+
+-- 99. Mostrar cantidad de pacientes registrados.
+SELECT COUNT(*) AS TotalPacientes FROM Pacientes;
+GO
+
+-- 100. Mostrar cantidad de citas por médico.
+SELECT MedicoID, COUNT(*) AS CantidadCitas
+FROM Citas
+GROUP BY MedicoID;
+GO
