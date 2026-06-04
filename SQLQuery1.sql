@@ -105,3 +105,8 @@ GO
 ALTER TABLE Pacientes
 ADD CONSTRAINT PK_Pacientes PRIMARY KEY (PacienteID);
 GO
+
+-- 12. Definir PRIMARY KEY en Médicos.
+ALTER TABLE Medicos
+ADD CONSTRAINT PK_Medicos PRIMARY KEY (MedicoID);
+GO
