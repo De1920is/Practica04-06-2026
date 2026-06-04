@@ -2,9 +2,17 @@
 -- MÓDULO I - CREACIÓN DE BASE DE DATOS (DDL)
 -- Proyecto: Hospital San Gabriel
 -- ============================================================================
+Use master 
+go 
+
+if exists (select name from sys.databases where name 'Hospital_DB')
+begin
+    drop database Hospital_DB
+end
+go
 
 -- 1. Crear una base de datos llamada HospitalDB.
-CREATE DATABASE HospitalDB;
+CREATE DATABASE Hospital_DB;
 GO
 
 -- 2. Mostrar todas las bases de datos existentes.
@@ -12,7 +20,7 @@ SELECT name FROM sys.databases;
 GO
 
 -- 3. Seleccionar HospitalDB para trabajar.
-USE HospitalDB;
+USE Hospital_DB;
 GO
 
 
