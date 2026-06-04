@@ -186,7 +186,6 @@ REFERENCES Pacientes(PacienteID);
 GO
 
 -- 24. Crear FOREIGN KEY entre Medicamentos y Tratamientos.
--- Nota: Para conectar ambas tablas según la guía, añadimos la llave foránea en Tratamientos.
 ALTER TABLE Tratamientos
 ADD MedicamentoID INT;
 GO
@@ -194,4 +193,14 @@ GO
 ALTER TABLE Tratamientos
 ADD CONSTRAINT FK_Tratamientos_Medicamentos FOREIGN KEY (MedicamentoID) 
 REFERENCES Medicamentos(MedicamentoID);
+GO
+
+-- 25. Crear FOREIGN KEY entre Habitaciones y Pacientes.
+ALTER TABLE Pacientes
+ADD HabitacionID INT;
+GO
+
+ALTER TABLE Pacientes
+ADD CONSTRAINT FK_Pacientes_Habitaciones FOREIGN KEY (HabitacionID) 
+REFERENCES Habitaciones(HabitacionID);
 GO
