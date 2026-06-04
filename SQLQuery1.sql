@@ -14,3 +14,13 @@ GO
 -- 3. Seleccionar HospitalDB para trabajar.
 USE HospitalDB;
 GO
+
+
+-- 4. Crear la tabla Especialidades.
+-- Nota: La creamos primero porque Medicos depende de ella.
+CREATE TABLE Especialidades (
+    EspecialidadID INT IDENTITY(1,1) PRIMARY KEY,
+    NombreEspecialidad VARCHAR(100) NOT NULL,
+    Descripcion VARCHAR(255) NULL
+);
+GO
