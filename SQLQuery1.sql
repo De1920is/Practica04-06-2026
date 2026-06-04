@@ -125,3 +125,8 @@ GO
 ALTER TABLE Pacientes
 ADD CONSTRAINT UQ_Pacientes_Email UNIQUE (Email);
 GO
+
+-- 16. Crear una restricción UNIQUE para el correo del médico.
+ALTER TABLE Medicos
+ADD CONSTRAINT UQ_Medicos_Email UNIQUE (Email);
+GO
