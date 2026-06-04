@@ -339,3 +339,171 @@ CREATE DATABASE HospitalPruebasDB;
 GO
 DROP DATABASE HospitalPruebasDB;
 GO
+
+Aquí tienes el script correspondiente al Módulo V: Insert, estructurado de forma limpia y directa para que puedas continuar agregando tus bloques y generando tus commits individuales uno por uno.
+
+SQL
+-- ============================================================================
+-- MÓDULO V - INSERCIÓN DE DATOS (INSERT)
+-- ============================================================================
+
+-- 51. Insertar 5 especialidades médicas.
+INSERT INTO Especialidades (NombreEspecialidad, Descripcion) VALUES
+('Cardiologia', 'Enfermedades del corazon'),
+('Pediatria', 'Atencion infantil'),
+('Dermatologia', 'Problemas de la piel'),
+('Ginecologia', 'Salud femenina'),
+('Medicina General', 'Consulta primaria');
+GO
+
+-- 52. Insertar 10 médicos.
+INSERT INTO Medicos (Nombres, Apellidos, EspecialidadID, Telefono, Email, Salario) VALUES
+('Carlos', 'Mendoza', 1, '8888-1111', 'carlos.m@mail.com', 2500),
+('Ana', 'Rodriguez', 2, '8888-2222', 'ana.r@mail.com', 2200),
+('Luis', 'Martinez', 3, '8888-3333', 'luis.m@mail.com', 2400),
+('Sofia', 'Lopez', 4, '8888-4444', 'sofia.l@mail.com', 2600),
+('Juan', 'Perez', 5, '8888-5555', 'juan.p@mail.com', 1800),
+('Elena', 'Guerra', 1, '8888-6666', 'elena.g@mail.com', 2700),
+('Pedro', 'Castro', 2, '8888-7777', 'pedro.c@mail.com', 2300),
+('Laura', 'Rizo', 3, '8888-8888', 'laura.r@mail.com', 2450),
+('Diego', 'Mejia', 4, '8888-9999', 'diego.m@mail.com', 2650),
+('Marta', 'Benavidez', 5, '8888-0000', 'marta.b@mail.com', 1900);
+GO
+
+-- 53. Insertar 20 pacientes.
+INSERT INTO Pacientes (Nombres, Apellidos, FechaNacimiento, Genero, Direccion, Telefono, Email, Edad) VALUES
+('Alejandro', 'Gomez', '1995-04-12', 'M', 'Managua', '7777-0101', 'ale.g@mail.com', 31),
+('Maria', 'Vasquez', '2010-08-22', 'F', 'Masaya', '7777-0202', 'mar.v@mail.com', 15),
+('Roberto', 'Castillo', '1978-11-05', 'M', 'Leon', '7777-0303', 'rob.c@mail.com', 47),
+('Elena', 'Torres', '2002-01-30', 'F', 'Granada', '7777-0404', 'ele.t@mail.com', 24),
+('Ricardo', 'Flores', '1965-06-15', 'M', 'Carazo', '7777-0505', 'ric.f@mail.com', 60),
+('Julia', 'Miranda', '1990-09-18', 'F', 'Managua', '7777-0606', 'jul.m@mail.com', 35),
+('Fernando', 'Reyes', '1985-03-25', 'M', 'Chinandega', '7777-0707', 'fer.r@mail.com', 41),
+('Gabriela', 'Duarte', '2015-07-14', 'F', 'Esteli', '7777-0808', 'gaby.d@mail.com', 10),
+('Manuel', 'Espinoza', '1950-12-01', 'M', 'Matagalpa', '7777-0909', 'man.e@mail.com', 75),
+('Patricia', 'Solis', '1998-05-20', 'F', 'Managua', '7777-1010', 'pat.s@mail.com', 28),
+('Jorge', 'Alvarado', '1993-02-11', 'M', 'Leon', '7777-1111', 'jorg.a@mail.com', 33),
+('Natalia', 'Ortega', '2005-10-05', 'F', 'Masaya', '7777-1212', 'nat.o@mail.com', 20),
+('Sergio', 'Salinas', '1972-08-19', 'M', 'Managua', '7777-1313', 'serg.s@mail.com', 53),
+('Clara', 'Montenegro', '1988-04-23', 'F', 'Granada', '7777-1414', 'clar.m@mail.com', 38),
+('Andres', 'Bermudez', '2012-01-15', 'M', 'Carazo', '7777-1515', 'andr.b@mail.com', 14),
+('Alicia', 'Chavarria', '1960-06-30', 'F', 'Chinandega', '7777-1616', 'alic.c@mail.com', 65),
+('Gustavo', 'Obando', '1999-11-22', 'M', 'Esteli', '7777-1717', 'gust.o@mail.com', 26),
+('Beatriz', 'Gaitan', '2001-03-08', 'F', 'Matagalpa', '7777-1818', 'beat.g@mail.com', 25),
+('Hector', 'Carcamo', '1945-07-17', 'M', 'Managua', '7777-1919', 'hect.c@mail.com', 80),
+('Veronica', 'Diaz', '1992-10-29', 'F', 'Rivas', '7777-2020', 'vero.d@mail.com', 33);
+GO
+
+-- 54. Insertar 15 citas.
+INSERT INTO Citas (PacienteID, MedicoID, FechaCita, Motivo, EstadoCita) VALUES
+(1, 1, '2026-06-10 09:00', 'Chequeo', 'Programada'),
+(2, 2, '2026-06-11 10:30', 'Control', 'Programada'),
+(3, 3, '2026-06-12 14:00', 'Consulta', 'Programada'),
+(4, 4, '2026-06-13 08:15', 'Revision', 'Programada'),
+(5, 5, '2026-06-14 11:00', 'Gripe', 'Programada'),
+(6, 6, '2026-06-15 09:30', 'Presion alta', 'Programada'),
+(7, 7, '2026-06-16 13:00', 'Fiebre', 'Programada'),
+(8, 8, '2026-06-17 15:15', 'Alergia', 'Programada'),
+(9, 9, '2026-06-18 10:00', 'Control', 'Programada'),
+(10, 10, '2026-06-19 16:30', 'Malestar', 'Programada'),
+(11, 1, '2026-06-20 11:15', 'Arritmia', 'Programada'),
+(12, 2, '2026-06-21 08:45', 'Chequeo', 'Programada'),
+(13, 3, '2026-06-22 14:30', 'Consulta', 'Programada'),
+(14, 4, '2026-06-23 10:45', 'Revision', 'Programada'),
+(15, 5, '2026-06-24 12:00', 'Control', 'Programada');
+GO
+
+-- 55. Insertar 10 habitaciones.
+INSERT INTO Habitaciones (NumeroHabitacion, TipoHabitacion, Estado) VALUES
+('101', 'Individual', 'Disponible'),
+('102', 'Compartida', 'Disponible'),
+('201', 'UCI', 'Ocupada'),
+('202', 'Individual', 'Disponible'),
+('301', 'Compartida', 'Mantenimiento'),
+('103', 'Individual', 'Disponible'),
+('104', 'Compartida', 'Ocupada'),
+('203', 'UCI', 'Disponible'),
+('204', 'Individual', 'Ocupada'),
+('302', 'Compartida', 'Disponible');
+GO
+
+-- 56. Insertar 10 tratamientos.
+INSERT INTO Tratamientos (PacienteID, MedicoID, FechaInicio, FechaFin, Descripcion) VALUES
+(1, 1, '2026-06-10', '2026-07-10', 'Tratamiento cardiaco'),
+(2, 2, '2026-06-11', '2026-06-18', 'Antibiotico pediatrico'),
+(3, 3, '2026-06-12', '2026-06-19', 'Crema dermatologica'),
+(4, 4, '2026-06-13', NULL, 'Seguimiento ginecologico'),
+(5, 5, '2026-06-14', '2026-06-21', 'Tratamiento antigripal'),
+(6, 6, '2026-06-15', '2026-07-15', 'Control de presion'),
+(7, 7, '2026-06-16', '2026-06-23', 'Hidratacion constante'),
+(8, 8, '2026-06-17', '2026-06-24', 'Antihistaminico diario'),
+(9, 9, '2026-06-18', NULL, 'Tratamiento hormonal'),
+(10, 10, '2026-06-19', '2026-06-26', 'Analgésico recetado');
+GO
+
+-- 57. Insertar 20 medicamentos.
+INSERT INTO Medicamentos (NombreMedicamento, ComponenteActivo, Presentacion, Stock, Precio) VALUES
+('Paracetamol', 'Acetaminofen', 'Tabletas', 150, 1.50),
+('Amoxicilina', 'Amoxicilina', 'Capsulas', 80, 4.20),
+('Ibuprofeno', 'Ibuprofeno', 'Tabletas', 200, 2.00),
+('Loratadina', 'Loratadina', 'Jarabe', 50, 5.50),
+('Omeprazol', 'Omeprazol', 'Capsulas', 120, 3.00),
+('Diclofenaco', 'Diclofenaco', 'Ampollas', 60, 2.50),
+('Losartan', 'Losartan', 'Tabletas', 180, 4.00),
+('Metformina', 'Metformina', 'Tabletas', 140, 3.50),
+('Atorvastatina', 'Atorvastatina', 'Tabletas', 90, 5.00),
+('Aspirina', 'Acido Acetilsalicilico', 'Tabletas', 300, 1.00),
+('Salbutamol', 'Salbutamol', 'Inhalador', 40, 8.50),
+('Clonazepam', 'Clonazepam', 'Tabletas', 70, 6.00),
+('Enalapril', 'Enalapril', 'Tabletas', 110, 2.20),
+('Azitromicina', 'Azitromicina', 'Tabletas', 65, 7.00),
+('Fluconazol', 'Fluconazol', 'Capsulas', 45, 4.80),
+('Sertralina', 'Sertralina', 'Tabletas', 85, 9.00),
+('Ranitidina', 'Ranitidina', 'Tabletas', 160, 1.80),
+('Cetirizina', 'Cetirizina', 'Tabletas', 130, 2.10),
+('Naproxeno', 'Naproxeno', 'Tabletas', 170, 2.60),
+('Insulina', 'Insulina Humana', 'Vial', 25, 22.00);
+GO
+
+-- 58. Insertar pacientes con todos los campos.
+INSERT INTO Pacientes (Nombres, Apellidos, FechaNacimiento, Genero, Direccion, Telefono, Email, Edad, HabitacionID, FechaRegistro) VALUES
+('Ramon', 'Valdez', '1975-02-28', 'M', 'Managua', '7777-2121', 'ramon.v@mail.com', 51, 1, GETDATE());
+GO
+
+-- 59. Insertar médicos especialistas.
+INSERT INTO Medicos (Nombres, Apellidos, SpecialtyID, Telefono, Email, Salario) VALUES
+('Francisco', 'Granera', 1, '8888-1234', 'f.granera@mail.com', 3200);
+GO
+
+-- 60. Insertar citas con fecha actual.
+INSERT INTO Citas (PacienteID, MedicoID, FechaCita, Motivo, EstadoCita) VALUES
+(1, 1, GETDATE(), 'Consulta de urgencia del dia', 'Programada');
+GO
+
+-- 61. Insertar citas futuras.
+INSERT INTO Citas (PacienteID, MedicoID, FechaCita, Motivo, EstadoCita) VALUES
+(2, 2, '2026-12-25 10:00', 'Chequeo programado fin de ano', 'Programada');
+GO
+
+-- 62. Insertar habitaciones ocupadas.
+INSERT INTO Habitaciones (NumeroHabitacion, TipoHabitacion, Estado) VALUES
+('401', 'Individual', 'Ocupada'),
+('402', 'Compartida', 'Ocupada');
+GO
+
+-- 63. Insertar habitaciones disponibles.
+INSERT INTO Habitaciones (NumeroHabitacion, TipoHabitacion, Estado) VALUES
+('501', 'Individual', 'Disponible'),
+('502', 'Compartida', 'Disponible');
+GO
+
+-- 64. Insertar tratamientos activos.
+-- Nota: Al no incluir FechaFin o dejarla NULL, se asume activo.
+INSERT INTO Tratamientos (PacienteID, MedicoID, FechaInicio, FechaFin, Descripcion) VALUES
+(3, 3, GETDATE(), NULL, 'Tratamiento dermatologico activo iniciado hoy');
+GO
+
+-- 65. Insertar tratamientos finalizados.
+INSERT INTO Tratamientos (PacienteID, MedicoID, FechaInicio, FechaFin, Descripcion) VALUES
+(4, 4, '2026-01-01', '2026-02-01', 'Tratamiento ginecologico concluido con exito');
+GO
