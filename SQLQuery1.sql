@@ -10,3 +10,7 @@ GO
 -- 2. Mostrar todas las bases de datos existentes.
 SELECT name FROM sys.databases;
 GO
+
+-- 3. Seleccionar HospitalDB para trabajar.
+USE HospitalDB;
+GO
