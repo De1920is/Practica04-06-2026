@@ -59,3 +59,16 @@ CREATE TABLE Habitaciones (
     Estado VARCHAR(20) DEFAULT 'Disponible' CHECK (Estado IN ('Disponible', 'Ocupada', 'Mantenimiento'))
 );
 GO
+
+-- 8. Crear la tabla Citas.
+CREATE TABLE Citas (
+    CitaID INT IDENTITY(1,1) PRIMARY KEY,
+    PacienteID INT NOT NULL,
+    MedicoID INT NOT NULL,
+    FechaCita DATETIME NOT NULL,
+    Motivo VARCHAR(255) NULL,
+    EstadoCita VARCHAR(20) DEFAULT 'Programada' CHECK (EstadoCita IN ('Programada', 'Completada', 'Cancelada')),
+    CONSTRAINT FK_Citas_Pacientes FOREIGN KEY (PacienteID) REFERENCES Pacientes(PacienteID),
+    CONSTRAINT FK_Citas_Medicos FOREIGN KEY (MedicoID) REFERENCES Medicos(MedicoID)
+);
+GO
