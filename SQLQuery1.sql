@@ -507,3 +507,97 @@ GO
 INSERT INTO Tratamientos (PacienteID, MedicoID, FechaInicio, FechaFin, Descripcion) VALUES
 (4, 4, '2026-01-01', '2026-02-01', 'Tratamiento ginecologico concluido con exito');
 GO
+
+-- ============================================================================
+-- MÓDULO VI - ACTUALIZACIÓN DE DATOS (UPDATE)
+-- ============================================================================
+
+-- 66. Actualizar teléfono de un paciente.
+UPDATE Pacientes
+SET Telefono = '8888-9999'
+WHERE PacienteID = 1;
+GO
+
+-- 67. Actualizar dirección de un paciente.
+UPDATE Pacientes
+SET Direccion = 'Carretera Masaya, Managua'
+WHERE PacienteID = 2;
+GO
+
+-- 68. Actualizar salario de un médico.
+UPDATE Medicos
+SET Salario = 3000.00
+WHERE MedicoID = 1;
+GO
+
+-- 69. Actualizar turno de un médico.
+UPDATE Medicos
+SET Turno = 'Nocturno'
+WHERE MedicoID = 2;
+GO
+
+-- 70. Cambiar estado de una cita.
+UPDATE Citas
+SET EstadoCita = 'Completada'
+WHERE CitaID = 1;
+GO
+
+-- 71. Actualizar costo de consulta.
+UPDATE Citas
+SET CostoConsulta = 50.00
+WHERE CitaID = 2;
+GO
+
+-- 72. Actualizar nombre de especialidad.
+UPDATE Especialidades
+SET NombreEspecialidad = 'Cardiologia Pediatrica'
+WHERE EspecialidadID = 1;
+GO
+
+-- 73. Actualizar disponibilidad de habitación.
+UPDATE Habitaciones
+SET Estado = 'Ocupada'
+WHERE HabitacionID = 1;
+GO
+
+-- 74. Actualizar tratamiento activo.
+UPDATE Tratamientos
+SET Descripcion = 'Tratamiento intensivo con dosis duplicada'
+WHERE TratamientoID = 1;
+GO
+
+-- 75. Actualizar medicamento.
+UPDATE Medicamentos
+SET Stock = 250
+WHERE MedicamentoID = 1;
+GO
+
+-- 76. Actualizar correo de paciente.
+UPDATE Pacientes
+SET Email = 'nuevo.correo@paciente.com'
+WHERE PacienteID = 3;
+GO
+
+-- 77. Actualizar correo de médico.
+UPDATE Medicos
+SET Email = 'doctor.actualizado@sangrabriel.com'
+WHERE MedicoID = 3;
+GO
+
+-- 78. Actualizar fecha de cita.
+UPDATE Citas
+SET FechaCita = '2026-07-15 14:30:00'
+WHERE CitaID = 3;
+GO
+
+-- 79. Actualizar experiencia del médico.
+UPDATE Medicos
+SET Experiencia = '10 anos'
+WHERE MedicoID = 4;
+GO
+
+-- 80. Actualizar tipo de sangre.
+UPDATE Pacientes
+SET TipoSangre = 'O+'
+WHERE PacienteID = 4;
+GO
