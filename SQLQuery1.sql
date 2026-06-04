@@ -150,3 +150,13 @@ GO
 ALTER TABLE Medicos
 ADD CONSTRAINT CHK_Medicos_Salario CHECK (Salario > 0);
 GO
+
+-- 19. Agregar DEFAULT para fecha de registro.
+-- Nota: Agregamos la columna FechaRegistro a Pacientes con valor por defecto la fecha actual.
+ALTER TABLE Pacientes
+ADD FechaRegistro DATETIME;
+GO
+
+ALTER TABLE Pacientes
+ADD CONSTRAINT DF_Pacientes_FechaRegistro DEFAULT GETDATE() FOR FechaRegistro;
+GO
