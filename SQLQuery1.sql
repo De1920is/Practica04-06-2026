@@ -72,3 +72,14 @@ CREATE TABLE Citas (
     CONSTRAINT FK_Citas_Medicos FOREIGN KEY (MedicoID) REFERENCES Medicos(MedicoID)
 );
 GO
+
+-- 9. Crear la tabla Medicamentos.
+CREATE TABLE Medicamentos (
+    MedicamentoID INT IDENTITY(1,1) PRIMARY KEY,
+    NombreMedicamento VARCHAR(100) NOT NULL,
+    ComponenteActivo VARCHAR(100) NULL,
+    Presentacion VARCHAR(50) NULL, -- Ej: Tabletas, Jarabe, Inyectable
+    Stock INT DEFAULT 0,
+    Precio DECIMAL(10,2) NOT NULL
+);
+GO
