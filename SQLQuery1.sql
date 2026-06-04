@@ -96,3 +96,12 @@ CREATE TABLE Tratamientos (
     CONSTRAINT FK_Tratamientos_Medicos FOREIGN KEY (MedicoID) REFERENCES Medicos(MedicoID)
 );
 GO
+
+-- ============================================================================
+-- MÓDULO II - RESTRICCIONES (DDL)
+-- ============================================================================
+
+-- 11. Definir PRIMARY KEY en Pacientes.
+ALTER TABLE Pacientes
+ADD CONSTRAINT PK_Pacientes PRIMARY KEY (PacienteID);
+GO
