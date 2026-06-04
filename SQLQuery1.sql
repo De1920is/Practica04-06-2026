@@ -204,3 +204,87 @@ ALTER TABLE Pacientes
 ADD CONSTRAINT FK_Pacientes_Habitaciones FOREIGN KEY (HabitacionID) 
 REFERENCES Habitaciones(HabitacionID);
 GO
+
+-- ============================================================================
+-- MÓDULO III - MANIPULACIÓN DE DATOS (DML)
+-- ============================================================================
+-- Guardo los commits por modulo ahora, no por columna. (Nota Enrique)
+
+-- 26. Insertar al menos 5 registros en Especialidades.
+INSERT INTO Especialidades (NombreEspecialidad, Descripcion) VALUES
+('Cardiologia', 'Estudio y tratamiento de enfermedades del corazon'),
+('Pediatria', 'Atencion medica para bebes, ninos y adolescentes'),
+('Dermatologia', 'Cuidado y enfermedades de la piel'),
+('Ginecologia', 'Salud del sistema reproductor femenino'),
+('Medicina General', 'Atencion medica primaria y preventiva');
+GO
+
+-- 27. Insertar al menos 5 registros en Medicos.
+INSERT INTO Medicos (Nombres, Apellidos, EspecialidadID, Telefono, Email, Salario) VALUES
+('Carlos', 'Mendoza', 1, '8888-1111', 'carlos.mendoza@sangrabriel.com', 2500.00),
+('Ana', 'Rodriguez', 2, '8888-2222', 'ana.rodriguez@sangrabriel.com', 2200.00),
+('Luis', 'Martinez', 3, '8888-3333', 'luis.martinez@sangrabriel.com', 2400.00),
+('Sofia', 'Lopez', 4, '8888-4444', 'sofia.lopez@sangrabriel.com', 2600.00),
+('Juan', 'Perez', 5, '8888-5555', 'juan.perez@sangrabriel.com', 1800.00);
+GO
+
+-- 28. Insertar al menos 5 registros en Habitaciones.
+INSERT INTO Habitaciones (NumeroHabitacion, TipoHabitacion, Estado) VALUES
+('101', 'Individual', 'Disponible'),
+('102', 'Compartida', 'Disponible'),
+('201', 'UCI', 'Ocupada'),
+('202', 'Individual', 'Disponible'),
+('301', 'Compartida', 'Mantenimiento');
+GO
+
+-- 29. Insertar al menos 5 registros en Pacientes.
+INSERT INTO Pacientes (Nombres, Apellidos, FechaNacimiento, Genero, Direccion, Telefono, Email, Edad, HabitacionID) VALUES
+('Alejandro', 'Gomez', '1995-04-12', 'M', 'Managua, Nicaragua', '7777-1111', 'alejandro.gomez@mail.com', 31, 1),
+('Maria', 'Vasquez', '2010-08-22', 'F', 'Masaya, Nicaragua', '7777-2222', 'maria.vasquez@mail.com', 15, 2),
+('Roberto', 'Castillo', '1978-11-05', 'M', 'Leon, Nicaragua', '7777-3333', 'roberto.castillo@mail.com', 47, 3),
+('Elena', 'Torres', '2002-01-30', 'F', 'Granada, Nicaragua', '7777-4444', 'elena.torres@mail.com', 24, 4),
+('Ricardo', 'Flores', '1965-06-15', 'M', 'Carazo, Nicaragua', '7777-5555', 'ricardo.flores@mail.com', 60, NULL);
+GO
+
+-- 30. Insertar al menos 5 registros en Citas.
+INSERT INTO Citas (PacienteID, MedicoID, FechaCita, Motivo, EstadoCita) VALUES
+(1, 1, '2026-06-10 09:00:00', 'Chequeo cardiaco general', 'Programada'),
+(2, 2, '2026-06-11 10:30:00', 'Control de crecimiento pediatrico', 'Programada'),
+(3, 3, '2026-06-12 14:00:00', 'Consulta por dermatitis', 'Programada'),
+(4, 4, '2026-06-13 08:15:00', 'Revision ginecologica anual', 'Programada'),
+(5, 5, '2026-06-14 11:00:00', 'Sintomas de gripe fuerte', 'Programada');
+GO
+
+-- 31. Insertar al menos 5 registros en Medicamentos.
+INSERT INTO Medicamentos (NombreMedicamento, ComponenteActivo, Presentacion, Stock, Precio) VALUES
+('Paracetamol', 'Acetaminofen', 'Tabletas', 150, 1.50),
+('Amoxicilina', 'Amoxicilina trihidrato', 'Capsulas', 80, 4.20),
+('Ibuprofeno', 'Ibuprofeno', 'Tabletas', 200, 2.00),
+('Loratadina', 'Loratadina', 'Jarabe', 50, 5.50),
+('Omeprazol', 'Omeprazol', 'Capsulas', 120, 3.00);
+GO
+
+-- 32. Insertar al menos 5 registros en Tratamientos.
+INSERT INTO Tratamientos (PacienteID, MedicoID, FechaInicio, FechaFin, Descripcion, MedicamentoID) VALUES
+(1, 1, '2026-06-10', '2026-07-10', 'Tratamiento preventivo de hipertension', 3),
+(2, 2, '2026-06-11', '2026-06-18', 'Antibiotico para infeccion leve', 2),
+(3, 3, '2026-06-12', '2026-06-19', 'Crema topica y antihistaminico', 4),
+(4, 4, '2026-06-13', NULL, 'Seguimiento de rutina medica', 1),
+(5, 5, '2026-06-14', '2026-06-21', 'Reposo e hidratacion por cuadro gripal', 1);
+GO
+
+-- ============================================================================
+-- MODIFICACIONES (UPDATE)
+-- ============================================================================
+
+-- 33. Modificar el nombre de un paciente específico.
+UPDATE Pacientes
+SET Nombres = 'Alejandro Jose'
+WHERE PacienteID = 1;
+GO
+
+-- 34. Modificar el precio de un medicamento específico.
+UPDATE Medicamentos
+SET Precio = 4.50
+WHERE MedicamentoID = 2;
+GO
