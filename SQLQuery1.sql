@@ -120,3 +120,8 @@ GO
 ALTER TABLE Medicos
 ALTER COLUMN Nombres VARCHAR(100) NOT NULL;
 GO
+
+-- 15. Crear una restricción UNIQUE para el correo del paciente.
+ALTER TABLE Pacientes
+ADD CONSTRAINT UQ_Pacientes_Email UNIQUE (Email);
+GO
