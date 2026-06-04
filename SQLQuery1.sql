@@ -136,3 +136,7 @@ GO
 ALTER TABLE Pacientes
 ADD Edad INT;
 GO
+
+ALTER TABLE Pacientes
+ADD CONSTRAINT CHK_Pacientes_Edad CHECK (Edad >= 0);
+GO
