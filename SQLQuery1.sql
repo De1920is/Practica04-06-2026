@@ -601,3 +601,58 @@ UPDATE Pacientes
 SET TipoSangre = 'O+'
 WHERE PacienteID = 4;
 GO
+
+-- ============================================================================
+-- MÓDULO VII - ELIMINACIÓN DE DATOS (DELETE)
+-- ============================================================================
+
+-- 81. Eliminar un paciente específico.
+DELETE FROM Pacientes
+WHERE PacienteID = 5;
+GO
+
+-- 82. Eliminar una cita.
+DELETE FROM Citas
+WHERE CitaID = 5;
+GO
+
+-- 83. Eliminar un medicamento.
+DELETE FROM Medicamentos
+WHERE MedicamentoID = 20;
+GO
+
+-- 84. Eliminar una habitación.
+DELETE FROM Habitaciones
+WHERE HabitacionID = 10;
+GO
+
+-- 85. Eliminar un tratamiento.
+DELETE FROM Tratamientos
+WHERE TratamientoID = 10;
+GO
+
+-- 86. Eliminar citas canceladas.
+DELETE FROM Citas
+WHERE EstadoCita = 'Cancelada';
+GO
+
+-- 87. Eliminar pacientes sin citas.
+DELETE FROM Pacientes
+WHERE PacienteID NOT IN (SELECT DISTINCT PacienteID FROM Citas);
+GO
+
+-- 88. Eliminar habitaciones vacías.
+DELETE FROM Habitaciones
+WHERE Estado = 'Disponible' 
+  AND HabitacionID NOT IN (SELECT DISTINCT HabitacionID FROM Pacientes WHERE HabitacionID IS NOT NULL);
+GO
+
+-- 89. Eliminar medicamentos vencidos.
+DELETE FROM Medicamentos
+WHERE Stock = 0;
+GO
+
+-- 90. Eliminar registros de prueba.
+DELETE FROM Pacientes
+WHERE Nombres LIKE '%Prueba%' OR Apellidos LIKE '%Prueba%';
+GO
