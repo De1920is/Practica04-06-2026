@@ -37,3 +37,16 @@ CREATE TABLE Medicos (
         REFERENCES Especialidades(EspecialidadID)
 );
 GO
+
+-- 6. Crear la tabla Pacientes.
+CREATE TABLE Pacientes (
+    PacienteID INT IDENTITY(1,1) PRIMARY KEY,
+    Nombres VARCHAR(100) NOT NULL,
+    Apellidos VARCHAR(100) NOT NULL,
+    FechaNacimiento DATE NOT NULL,
+    Genero CHAR(1) CHECK (Genero IN ('M', 'F')),
+    Direccion VARCHAR(255) NULL,
+    Telefono VARCHAR(20) NULL,
+    Email VARCHAR(100) NULL
+);
+GO
