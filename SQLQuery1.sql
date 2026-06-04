@@ -24,3 +24,16 @@ CREATE TABLE Especialidades (
     Descripcion VARCHAR(255) NULL
 );
 GO
+
+-- 5. Crear la tabla Medicos.
+CREATE TABLE Medicos (
+    MedicoID INT IDENTITY(1,1) PRIMARY KEY,
+    Nombres VARCHAR(100) NOT NULL,
+    Apellidos VARCHAR(100) NOT NULL,
+    EspecialidadID INT NOT NULL,
+    Telefono VARCHAR(20) NULL,
+    Email VARCHAR(100) NULL,
+    CONSTRAINT FK_Medicos_Especialidades FOREIGN KEY (EspecialidadID) 
+        REFERENCES Especialidades(EspecialidadID)
+);
+GO
