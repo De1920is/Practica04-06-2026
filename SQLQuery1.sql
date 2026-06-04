@@ -50,3 +50,12 @@ CREATE TABLE Pacientes (
     Email VARCHAR(100) NULL
 );
 GO
+
+-- 7. Crear la tabla Habitaciones.
+CREATE TABLE Habitaciones (
+    HabitacionID INT IDENTITY(1,1) PRIMARY KEY,
+    NumeroHabitacion VARCHAR(10) NOT NULL UNIQUE,
+    TipoHabitacion VARCHAR(50) NOT NULL, -- Ej: Individual, Compartida, UCI
+    Estado VARCHAR(20) DEFAULT 'Disponible' CHECK (Estado IN ('Disponible', 'Ocupada', 'Mantenimiento'))
+);
+GO
