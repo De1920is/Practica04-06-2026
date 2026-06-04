@@ -140,3 +140,13 @@ GO
 ALTER TABLE Pacientes
 ADD CONSTRAINT CHK_Pacientes_Edad CHECK (Edad >= 0);
 GO
+
+-- 18. Agregar CHECK para salario del médico mayor que 0.
+-- Nota: Primero agregamos el campo Salario a la tabla Medicos.
+ALTER TABLE Medicos
+ADD Salario DECIMAL(10,2);
+GO
+
+ALTER TABLE Medicos
+ADD CONSTRAINT CHK_Medicos_Salario CHECK (Salario > 0);
+GO
