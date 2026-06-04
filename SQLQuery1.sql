@@ -110,3 +110,8 @@ GO
 ALTER TABLE Medicos
 ADD CONSTRAINT PK_Medicos PRIMARY KEY (MedicoID);
 GO
+
+-- 13. Agregar NOT NULL al nombre del paciente.
+ALTER TABLE Pacientes
+ALTER COLUMN Nombres VARCHAR(100) NOT NULL;
+GO
