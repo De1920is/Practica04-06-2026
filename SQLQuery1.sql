@@ -115,3 +115,8 @@ GO
 ALTER TABLE Pacientes
 ALTER COLUMN Nombres VARCHAR(100) NOT NULL;
 GO
+
+-- 14. Agregar NOT NULL al nombre del médico.
+ALTER TABLE Medicos
+ALTER COLUMN Nombres VARCHAR(100) NOT NULL;
+GO
