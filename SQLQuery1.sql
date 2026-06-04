@@ -178,3 +178,9 @@ ALTER TABLE Citas
 ADD CONSTRAINT FK_Citas_Medicos_Mod2 FOREIGN KEY (MedicoID) 
 REFERENCES Medicos(MedicoID);
 GO
+
+-- 23. Crear FOREIGN KEY entre Tratamientos y Pacientes.
+ALTER TABLE Tratamientos
+ADD CONSTRAINT FK_Tratamientos_Pacientes_Mod2 FOREIGN KEY (PacienteID) 
+REFERENCES Pacientes(PacienteID);
+GO
