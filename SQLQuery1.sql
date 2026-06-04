@@ -83,3 +83,16 @@ CREATE TABLE Medicamentos (
     Precio DECIMAL(10,2) NOT NULL
 );
 GO
+
+-- 10. Crear la tabla Tratamientos.
+CREATE TABLE Tratamientos (
+    TratamientoID INT IDENTITY(1,1) PRIMARY KEY,
+    PacienteID INT NOT NULL,
+    MedicoID INT NOT NULL,
+    FechaInicio DATE NOT NULL,
+    FechaFin DATE NULL,
+    Descripcion VARCHAR(500) NOT NULL,
+    CONSTRAINT FK_Tratamientos_Pacientes FOREIGN KEY (PacienteID) REFERENCES Pacientes(PacienteID),
+    CONSTRAINT FK_Tratamientos_Medicos FOREIGN KEY (MedicoID) REFERENCES Medicos(MedicoID)
+);
+GO
