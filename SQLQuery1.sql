@@ -160,3 +160,9 @@ GO
 ALTER TABLE Pacientes
 ADD CONSTRAINT DF_Pacientes_FechaRegistro DEFAULT GETDATE() FOR FechaRegistro;
 GO
+
+-- 20. Crear FOREIGN KEY entre Médicos y Especialidades.
+ALTER TABLE Medicos
+ADD CONSTRAINT FK_Medicos_Especialidades_Mod2 FOREIGN KEY (EspecialidadID) 
+REFERENCES Especialidades(EspecialidadID);
+GO
