@@ -288,3 +288,54 @@ UPDATE Medicamentos
 SET Precio = 4.50
 WHERE MedicamentoID = 2;
 GO
+
+-- ============================================================================
+-- MÓDULO IV - ELIMINACIÓN DE OBJETOS (DROP)
+-- ============================================================================
+
+-- 41. Eliminar una tabla temporal.
+CREATE TABLE #TablaTemporal (ID INT);
+DROP TABLE #TablaTemporal;
+GO
+
+-- 42. Eliminar una restricción CHECK.
+ALTER TABLE Pacientes DROP CONSTRAINT CHK_Pacientes_Edad;
+GO
+
+-- 43. Eliminar una restricción UNIQUE.
+ALTER TABLE Medicos DROP CONSTRAINT UQ_Medicos_Email;
+GO
+
+-- 44. Eliminar una columna.
+ALTER TABLE Pacientes DROP COLUMN Telefono;
+GO
+
+-- 45. Eliminar una tabla de pruebas.
+CREATE TABLE TablaPruebas (ID INT);
+DROP TABLE TablaPruebas;
+GO
+
+-- 46. Crear y eliminar una tabla Auditoria.
+CREATE TABLE Auditoria (ID INT, Accion VARCHAR(50));
+DROP TABLE Auditoria;
+GO
+
+-- 47. Crear y eliminar una tabla Logs.
+CREATE TABLE Logs (ID INT, Detalle VARCHAR(100));
+DROP TABLE Logs;
+GO
+
+-- 48. Eliminar una FOREIGN KEY.
+ALTER TABLE Tratamientos DROP CONSTRAINT FK_Tratamientos_Medicamentos;
+GO
+
+-- 49. Eliminar una tabla MedicamentosPrueba.
+CREATE TABLE MedicamentosPrueba (ID INT);
+DROP TABLE MedicamentosPrueba;
+GO
+
+-- 50. Eliminar una base de datos de pruebas.
+CREATE DATABASE HospitalPruebasDB;
+GO
+DROP DATABASE HospitalPruebasDB;
+GO
